@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AllSlidesDemo"
         tools:targetApi="31">
         <activity
+            android:name=".features.productdetails.activities.ProductDetailsActivity"
+            android:exported="true"/>
+        <activity
             android:name=".features.productlist.activities.ProductListActivity"
             android:exported="true">
             <intent-filter>

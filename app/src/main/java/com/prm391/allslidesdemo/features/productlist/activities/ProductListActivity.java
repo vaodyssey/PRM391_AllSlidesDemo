@@ -2,10 +2,14 @@ package com.prm391.allslidesdemo.features.productlist.activities;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.Adapter;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -24,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,11 +39,13 @@ public class ProductListActivity extends AppCompatActivity {
     private ArrayList<Product> productList;
     private RecyclerView productsRecyclerView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
             super.onCreate(savedInstanceState);
             SetupAndroid();
+            SetupToolbar();
             InitializeClassVariables();
             LoadProductsFromJsonFile();
             InitializeProductsRecyclerView();
@@ -47,6 +54,25 @@ public class ProductListActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_product_list, menu);
+        return true;
+    }
+    private void SetupAndroid() {
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_product_list);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+    private void SetupToolbar(){
+        Toolbar toolbar
+                = findViewById(R.id.productListToolbar);
+        setSupportActionBar(toolbar);
+    }
     private void InitializeClassVariables() {
         productList = new ArrayList<>();
     }
@@ -58,9 +84,10 @@ public class ProductListActivity extends AppCompatActivity {
 
         for (int i = 0; i < productJsonArray.length(); i++) {
             JSONObject product = productJsonArray.getJSONObject(i);
+            int productId = Integer.parseInt(product.getString("id"));
             String productName = product.getString("name");
             Bitmap productImage = ImageUtils.getBitmapFromAssets(this,"products/images/"+productName+".png");
-            productList.add(new Product(productImage,productName));
+            productList.add(new Product(productId,productImage,productName));
         }
     }
     private void InitializeProductsRecyclerView(){
@@ -75,7 +102,7 @@ public class ProductListActivity extends AppCompatActivity {
         boolean includeEdge = true;
         productsRecyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
         // Sending reference and data to Adapter
-        ProductListAdapter adapter = new ProductListAdapter(productList);
+        ProductListAdapter adapter = new ProductListAdapter(getApplicationContext(),productList);
 
         // Setting Adapter to RecyclerView
         productsRecyclerView.setAdapter(adapter);
@@ -83,13 +110,5 @@ public class ProductListActivity extends AppCompatActivity {
 
 
 
-    private void SetupAndroid() {
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_product_list);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-    }
+
 }

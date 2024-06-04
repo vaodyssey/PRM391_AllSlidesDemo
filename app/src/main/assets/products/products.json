@@ -1,21 +1,27 @@
 {
   "productList": [
     {
+      "id": 1,
       "name": "accessories"
     },
     {
+      "id": 2,
       "name": "cart"
     },
     {
+      "id": 3,
       "name": "clothing"
     },
     {
+      "id": 4,
       "name": "pharmacy"
     },
     {
+      "id": 5,
       "name": "present"
     },
     {
+      "id": 6,
       "name": "shoes"
     }
   ]

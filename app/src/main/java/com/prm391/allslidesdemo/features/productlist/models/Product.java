@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class Product {
+    private int id;
     private Bitmap image;
     private String name;
 }
