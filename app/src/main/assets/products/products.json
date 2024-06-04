@@ -1,0 +1,22 @@
+{
+  "productList": [
+    {
+      "name": "accessories"
+    },
+    {
+      "name": "cart"
+    },
+    {
+      "name": "clothing"
+    },
+    {
+      "name": "pharmacy"
+    },
+    {
+      "name": "present"
+    },
+    {
+      "name": "shoes"
+    }
+  ]
+}
