@@ -16,11 +16,12 @@ import com.prm391.allslidesdemo.features.productdetails.activities.ProductDetail
 import com.prm391.allslidesdemo.features.productlist.models.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
-    private ArrayList<Product> products;
+    private List<Product> products;
     private Context context;
-    public ProductListAdapter(Context context,ArrayList<Product> products){
+    public ProductListAdapter(Context context, List<Product> products){
         this.context = context;
         this.products = products;
     }

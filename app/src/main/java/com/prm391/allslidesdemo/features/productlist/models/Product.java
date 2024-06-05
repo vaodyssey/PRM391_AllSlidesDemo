@@ -8,9 +8,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
+@Setter
 public class Product {
     private int id;
-    private Bitmap image;
     private String name;
+    private String description;
+    private Double price;
+    private Bitmap image;
+
 }
