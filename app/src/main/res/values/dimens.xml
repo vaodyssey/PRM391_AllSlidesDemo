@@ -1,4 +1,10 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="textbox_width">300dp</dimen>
+    <dimen name="textbox_height">48dp</dimen>
+    <dimen name="login_btn_width">300dp</dimen>
+    <dimen name="login_btn_height">48dp</dimen>
+    <dimen name="margin_between_items_in_linear_layout">10dp</dimen>
+    <dimen name="margin_between_linear_layouts">50dp</dimen>
 </resources>

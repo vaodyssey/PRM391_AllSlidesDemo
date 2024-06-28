@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/instagram_background_color"
+    tools:context=".features.instagram.InstagramFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="15dp"
+                app:srcCompat="@drawable/instagram"></ImageView>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_between_linear_layouts"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/email_input"
+                android:layout_width="@dimen/textbox_width"
+                android:layout_height="@dimen/textbox_height"
+                android:layout_marginBottom="@dimen/margin_between_items_in_linear_layout"
+                android:hint="Username"
+                android:paddingLeft="15dp"
+                android:background="@drawable/instagram_input_field"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"></EditText>
+
+            <EditText
+                android:id="@+id/password_input"
+                android:layout_width="@dimen/textbox_width"
+                android:layout_height="@dimen/textbox_height"
+                android:layout_marginBottom="@dimen/margin_between_items_in_linear_layout"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="15dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/instagram_input_field"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"></EditText>
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="@dimen/login_btn_width"
+                android:layout_height="@dimen/login_btn_height"
+                android:background="@drawable/instagram_login_btn"
+                android:text="Login"
+                app:backgroundTint="@null"></Button>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_between_linear_layouts"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_between_items_in_linear_layout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot your login details?"
+                    android:textColor="@color/white"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"
+                    android:text="Get help signing in."
+                    android:textColor="@color/white"></TextView>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OR"
+                android:layout_marginBottom="@dimen/margin_between_items_in_linear_layout"
+                android:textColor="@color/white"></TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_between_linear_layouts"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/facebook">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"
+                    android:text="Log In with Facebook">
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/toFacebookUIBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/previous"></ImageButton>
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
